@@ -1,22 +1,23 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Acerca } from "../paginas/Acerca";
+import { Contacto } from "../paginas/Contacto";
+import Error404 from "../paginas/Error404";
+import Home from "../paginas/Home";
+import { MenuConceptos } from "./MenuConceptos";
 
 export const ConceptosBasicos = () => {
   return (
     <div>
       <h2>Conceptos Básicos</h2>
       <Router>
+        <MenuConceptos />
         <Switch>
-          <Route exact path="/">
-            <h3>Home</h3>
-            <p>Bienvenidos al tema de las rutas en react.</p>
-          </Route>
-          <Route exact path="/acerca">
-            <h3>Acerca</h3>
-          </Route>
-          <Route exact path="/contacto">
-            <h3>Contacto</h3>
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/acerca" component={Acerca} />
+          <Route exact path="/contacto" component={Contacto} />
+          {/*Si o si se carga al final el error 404*/}
+          <Route path="*" component={Error404} />
         </Switch>
       </Router>
     </div>
