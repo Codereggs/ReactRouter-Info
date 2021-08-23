@@ -35,6 +35,15 @@ export const MenuConceptos = () => {
               Error 404
             </NavLink> */}
           </li>
+          <li>
+            <span>Parámetros:</span>
+            <Link to="/usuario/codereggs">Codereggs</Link>
+            <Link to="/usuario/davidsgs">Davidsgs</Link>
+          </li>
+          <li>
+            <span>Párametros de consulta:</span>
+            <Link to="/productos">Productos</Link>
+          </li>
         </ol>
       </nav>
     </div>
