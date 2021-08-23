@@ -7,12 +7,15 @@ import {
 } from "react-router-dom";
 import { Acerca } from "../paginas/Acerca";
 import { Contacto } from "../paginas/Contacto";
+import Dashboard from "../paginas/Dashboard";
 import Error404 from "../paginas/Error404";
 import Home from "../paginas/Home";
+import Login from "../paginas/Login";
 import Productos from "../paginas/Productos";
 import ReactTopics from "../paginas/ReactTopics";
 import Usuario from "../paginas/Usuario";
 import { MenuConceptos } from "./MenuConceptos";
+import PrivateRoute from "./PrivateRoute";
 
 export const ConceptosBasicos = () => {
   return (
@@ -33,6 +36,10 @@ export const ConceptosBasicos = () => {
             <Redirect to="/contacto" />
           </Route>
           <Route path="/react" component={ReactTopics} />
+          <Route exact path="/login" component={Login} />
+
+          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
           {/*Si o si se carga al final el error 404*/}
           <Route path="*" component={Error404} />
         </Switch>
