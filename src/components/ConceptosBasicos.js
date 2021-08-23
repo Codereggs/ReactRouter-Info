@@ -10,6 +10,7 @@ import { Contacto } from "../paginas/Contacto";
 import Error404 from "../paginas/Error404";
 import Home from "../paginas/Home";
 import Productos from "../paginas/Productos";
+import ReactTopics from "../paginas/ReactTopics";
 import Usuario from "../paginas/Usuario";
 import { MenuConceptos } from "./MenuConceptos";
 
@@ -31,6 +32,7 @@ export const ConceptosBasicos = () => {
           <Route path="/contact">
             <Redirect to="/contacto" />
           </Route>
+          <Route path="/react" component={ReactTopics} />
           {/*Si o si se carga al final el error 404*/}
           <Route path="*" component={Error404} />
         </Switch>
