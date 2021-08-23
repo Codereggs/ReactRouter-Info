@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 import { Acerca } from "../paginas/Acerca";
 import { Contacto } from "../paginas/Contacto";
 import Error404 from "../paginas/Error404";
@@ -20,6 +25,12 @@ export const ConceptosBasicos = () => {
           <Route exact path="/contacto" component={Contacto} />
           <Route path="/usuario/:username" component={Usuario} />
           <Route path="/productos" component={Productos} />
+          <Route path="/about">
+            <Redirect to="/acerca" />{" "}
+          </Route>
+          <Route path="/contact">
+            <Redirect to="/contacto" />
+          </Route>
           {/*Si o si se carga al final el error 404*/}
           <Route path="*" component={Error404} />
         </Switch>
